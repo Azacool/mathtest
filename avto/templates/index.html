@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>Car Information</title>
+</head>
+<body>
+    <h1>Car Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Price</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+{% for car in cars %}
+            <tr>
+                <td>{{car.owner}}</td>
+                <td>{{car.price}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+            </tr>
+{% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
